@@ -29,13 +29,13 @@ public class BirthdayNotificationBean {
 	@Schedule(hour="9")
 	private void checkBirthday() {
 		
-		List<Customer> birthdays = customerDAO.getCustomersHavingBirthday();
+//		List<Customer> birthdays = customerDAO.getCustomersHavingBirthday();
 		
-		for(Customer customer : birthdays) {
-			context.createProducer().send(birthdayDestination, customer);
+//		for(Customer customer : birthdays) {
+//			context.createProducer().send(birthdayDestination, customer);
 		}
 
 	}
 	
-}
+//}
 

@@ -3,7 +3,7 @@ package com.cm.persistence.entities;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Date;
+//import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -13,25 +13,24 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.NamedNativeQuery;
+//import javax.persistence.NamedNativeQuery;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
-import com.cm.persistence.enums.Gender;
-import com.cm.persistence.enums.Relationship;
+//import com.cm.persistence.enums.Gender;
+//import com.cm.persistence.enums.Relationship;
 
 @Entity
 @NamedQuery(
 		name = Customer.QUERY_GETALL,
 		query = "SELECT c FROM Customer c")
 
-@NamedNativeQuery(
-		name = Customer.QUERY_BIRTHDAYS,
-		query = "SELECT * FROM customer WHERE DAY(birthday) = ? AND MONTH(birthday) = ?",
-		resultClass = Customer.class)
+//@NamedNativeQuery(
+//		name = Customer.QUERY_BIRTHDAYS,
+//		query = "SELECT * FROM customer WHERE DAY(birthday) = ? AND MONTH(birthday) = ?",
+//		resultClass = Customer.class)
 public class Customer  implements Serializable
 {
 	private static final long serialVersionUID = 1L;
@@ -51,11 +50,27 @@ public class Customer  implements Serializable
 	@Size(min=1, max=100)
 	private String lastName;
 	
-	private Gender gender;
+	@NotNull
+	@Size(max=100)
+	private String city;
 	
-	private Relationship relationship;
+	@NotNull
+	@Size(max=100)
+	private String street;
 	
-	private Date birthday;
+	@NotNull
+	@Size(max=10)
+	private String zip;
+	
+	@NotNull
+	@Size(max=100)
+	private String kontakt;
+	
+//	private Gender gender;
+//	
+//	private Relationship relationship;
+//	
+//	private Date birthday;
 	
 	@OneToMany(cascade=CascadeType.ALL, orphanRemoval=true,  fetch=FetchType.EAGER)
 	@JoinColumn(name = "customerid")
@@ -91,30 +106,74 @@ public class Customer  implements Serializable
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+	
+	public String getCity() {
+		return city;
+	}
+	
+	@NotNull
+	@Size(max=50)
+	private String country;
 
-	public Gender getGender() {
-		return gender;
+	public void setCity(String city) {
+		this.city = city;
+	}
+	
+	public String getCountry() {
+		return country;
 	}
 
-	public void setGender(Gender gender) {
-		this.gender = gender;
+	public void setCountry(String country) {
+		this.country = country;
+	}
+	
+	public String getStreet() {
+		return street;
 	}
 
-	public Relationship getRelationship() {
-		return relationship;
+	public void setStreet(String street) {
+		this.street = street;
+	}
+	
+	public String getZip() {
+		return zip;
 	}
 
-	public void setRelationship(Relationship relationship) {
-		this.relationship = relationship;
+	public void setZip(String zip) {
+		this.zip = zip;
+	}
+	
+	public String getKontakt() {
+		return kontakt;
 	}
 
-	public Date getBirthday() {
-		return birthday;
+	public void setKontakt(String kontakt) {
+		this.kontakt = kontakt;
 	}
 
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
-	}
+//	public Gender getGender() {
+//		return gender;
+//	}
+//
+//	public void setGender(Gender gender) {
+//		this.gender = gender;
+//	}
+//
+//	public Relationship getRelationship() {
+//		return relationship;
+//	}
+//
+//	public void setRelationship(Relationship relationship) {
+//		this.relationship = relationship;
+//	}
+//
+//	public Date getBirthday() {
+//		return birthday;
+//	}
+//
+//	public void setBirthday(Date birthday) {
+//		this.birthday = birthday;
+//	}
 
 	public List<Address> getAddresses() {
 		return addresses;

@@ -25,19 +25,19 @@ public class Communication implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@NotNull
-	@Size(max=100)
-	private String value;
+//	@NotNull
+//	@Size(max=100)
+//	private String value;
 	
-	@NotNull
-	@Size(max=20)
-	private String name;
-	
-	@Enumerated(EnumType.STRING)
-	private CommunicationType communicationType;
-	
-	@Enumerated(EnumType.STRING)
-	private Kind kind;
+//	@NotNull
+//	@Size(max=20)
+//	private String name;
+//	
+//	@Enumerated(EnumType.STRING)
+//	private CommunicationType communicationType;
+//	
+//	@Enumerated(EnumType.STRING)
+//	private Kind kind;
 	
 	@Version
 	private Timestamp lastChanged;
@@ -50,35 +50,35 @@ public class Communication implements Serializable {
 		this.id = id;
 	}
 
-	public String getValue() {
-		return value;
-	}
+//	public String getValue() {
+//		return value;
+//	}
+//
+//	public void setValue(String value) {
+//		this.value = value;
+//	}
 
-	public void setValue(String value) {
-		this.value = value;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public CommunicationType getCommunicationType() {
-		return communicationType;
-	}
-
-	public void setCommunicationType(CommunicationType communicationType) {
-		this.communicationType = communicationType;
-	}
-
-	public Kind getKind() {
-		return kind;
-	}
-
-	public void setKind(Kind kind) {
-		this.kind = kind;
-	}	
+//	public String getName() {
+//		return name;
+//	}
+//
+//	public void setName(String name) {
+//		this.name = name;
+//	}
+//
+//	public CommunicationType getCommunicationType() {
+//		return communicationType;
+//	}
+//
+//	public void setCommunicationType(CommunicationType communicationType) {
+//		this.communicationType = communicationType;
+//	}
+//
+//	public Kind getKind() {
+//		return kind;
+//	}
+//
+//	public void setKind(Kind kind) {
+//		this.kind = kind;
+//	}	
 }

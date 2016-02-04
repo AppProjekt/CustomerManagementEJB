@@ -25,24 +25,24 @@ public class Address implements Serializable
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@NotNull
-	@Size(max=100)
-	private String street;
+//	@NotNull
+//	@Size(max=100)
+//	private String street;
 	
-	@NotNull
-	@Size(max=100)
-	private String city;
+//	@NotNull
+//	@Size(max=100)
+//	private String city;
 	
-	@NotNull
-	@Size(max=10)
-	private String zip;
+//	@NotNull
+//	@Size(max=10)
+//	private String zip;
 	
-	@NotNull
-	@Size(max=50)
-	private String country;
+//	@NotNull
+//	@Size(max=50)
+//	private String country;
 
-	@Enumerated(EnumType.STRING)
-	private Kind kind;
+//	@Enumerated(EnumType.STRING)
+//	private Kind kind;
 	
 	@Version
 	private Timestamp lastChanged;
@@ -55,43 +55,43 @@ public class Address implements Serializable
 		this.id = id;
 	}
 
-	public String getStreet() {
-		return street;
-	}
+//	public String getStreet() {
+//		return street;
+//	}
+//
+//	public void setStreet(String street) {
+//		this.street = street;
+//	}
 
-	public void setStreet(String street) {
-		this.street = street;
-	}
+//	public String getCity() {
+//		return city;
+//	}
+//
+//	public void setCity(String city) {
+//		this.city = city;
+//	}
 
-	public String getCity() {
-		return city;
-	}
+//	public String getZip() {
+//		return zip;
+//	}
+//
+//	public void setZip(String zip) {
+//		this.zip = zip;
+//	}
 
-	public void setCity(String city) {
-		this.city = city;
-	}
+//	public String getCountry() {
+//		return country;
+//	}
+//
+//	public void setCountry(String country) {
+//		this.country = country;
+//	}
 
-	public String getZip() {
-		return zip;
-	}
-
-	public void setZip(String zip) {
-		this.zip = zip;
-	}
-
-	public String getCountry() {
-		return country;
-	}
-
-	public void setCountry(String country) {
-		this.country = country;
-	}
-
-	public Kind getKind() {
-		return kind;
-	}
-
-	public void setKind(Kind kind) {
-		this.kind = kind;
-	}	
+//	public Kind getKind() {
+//		return kind;
+//	}
+//
+//	public void setKind(Kind kind) {
+//		this.kind = kind;
+//	}	
 }

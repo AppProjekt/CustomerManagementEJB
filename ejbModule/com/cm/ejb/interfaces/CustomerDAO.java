@@ -16,6 +16,6 @@ public interface CustomerDAO {
 	
 	public List<Customer> getAllCustomers();
 
-	public List<Customer> getCustomersHavingBirthday();
+//	public List<Customer> getCustomersHavingBirthday();
 }
 

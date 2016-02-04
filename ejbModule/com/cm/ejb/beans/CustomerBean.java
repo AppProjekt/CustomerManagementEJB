@@ -1,6 +1,6 @@
 package com.cm.ejb.beans;
 
-import java.util.Calendar;
+//import java.util.Calendar;
 import java.util.List;
 
 import javax.ejb.Remote;
@@ -47,13 +47,13 @@ public class CustomerBean implements CustomerDAO {
 				  .getResultList();
 	}
 
-	@Override
-	public List<Customer> getCustomersHavingBirthday() {
-		Calendar todaysCalendar = Calendar.getInstance();
-		
-		return em.createNamedQuery(Customer.QUERY_BIRTHDAYS, Customer.class)
-				 .setParameter(1, todaysCalendar.get(Calendar.DAY_OF_MONTH))
-				 .setParameter(2, todaysCalendar.get(Calendar.MONTH))
-				 .getResultList();
-	}
+//	@Override
+//	public List<Customer> getCustomersHavingBirthday() {
+//		Calendar todaysCalendar = Calendar.getInstance();
+//		
+//		return em.createNamedQuery(Customer.QUERY_BIRTHDAYS, Customer.class)
+//				 .setParameter(1, todaysCalendar.get(Calendar.DAY_OF_MONTH))
+//				 .setParameter(2, todaysCalendar.get(Calendar.MONTH))
+//				 .getResultList();
+//	}
 }
